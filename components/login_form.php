@@ -19,7 +19,7 @@
                      <?php echo $email_error; ?>
                 <?php endif; ?>
             </div>
-        </div> <!-- group -->
+        </div> <!-- close group -->
         <div class="group">
             <input type="password" name="password" class="control" placeholder="Create Password..." 
                 value="<?php if(isset($password)): echo $password; endif;?>">
@@ -28,6 +28,14 @@
                     <?php echo $password_error; ?>
                 <?php endif; ?>
             </div>
+        </div> <!-- close group -->
+        <div class="group">
+            <input type="submit" name="login" class="btn account-btn" value="User login">
+        </div> <!-- close group -->
+        <div class="group">
+            <a href="signup.php" class="link">
+                Create A New Account?
+            </a>
         </div> <!-- close group -->
     </form>
 </div> <!-- close form-area -->
