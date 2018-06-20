@@ -3,7 +3,27 @@
     $obj = new base_class;
     
     if(isset($_POST['signup'])){
+        $full_name = $obj->security($_POST['full_name']);
+        $email = $obj->security($_POST['emai']);
         
+        // Full Name validations
+        if(empty($full_name)){
+            $name_error = "Full Name Is Required";
+            $name_status = "";
+        }
+        
+        // Email Validations
+        if(empty($email)){
+            $email_error = "Email is required";
+            $email_status = "";
+        } else {
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $email_error = "Email Format is Invalid";
+                $email_status = "";
+            } else {
+                
+            }
+        }
     }
 ?>
 
