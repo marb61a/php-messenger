@@ -110,3 +110,52 @@ body {
 #file-label:hover {
     cursor: pointer;
 }
+
+.btn {
+    display: block;
+    padding: 1.2rem .9rem;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    border: 0px;
+    color: var(--color-white);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.account-btn {
+    width: 100%;
+    background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark));
+    box-shadow: 0 .8rem .6rem -.6px rgba(0, 0, 0, 0.1);
+}
+
+.account-btn:hover {
+    cursor: pointer;
+}
+
+.account-btn:focus {
+    outline: none;
+}
+
+.form-heading {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 400;
+    border-bottom: .1rem solid var(--color-silver);
+    padding-bottom: 1.5rem;
+    letter-spacing: .2rem;
+    text-align: left;
+    color: #999;
+}
+
+.link {
+    color: #999;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: left;
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
