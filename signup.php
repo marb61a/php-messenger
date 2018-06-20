@@ -4,7 +4,14 @@
     
     if(isset($_POST['signup'])){
         $full_name = $obj->security($_POST['full_name']);
-        $email = $obj->security($_POST['emai']);
+        $email = $obj->security($_POST['email']);
+        $password = $obj->security($_POST['password']);
+        $img_name = $_FILES['img']['name'];
+        $img_tmp = $_FILES['img']['tmp_name'];
+        $img_path = "assets/img/";
+        $extensions = ['jpg', 'jpeg', 'png'];
+        $img_ext = explode(".", $img_name);
+        $img_extension = end($img_ext);
         
         // Full Name validations
         if(empty($full_name)){
@@ -21,9 +28,38 @@
                 $email_error = "Email Format is Invalid";
                 $email_status = "";
             } else {
-                
+                if($obj->Normal_Query("SELECT email FROM users WHERE email = ?", array($email))){
+                    if($obj->Count_Rows() == 0){
+                        
+                    } else {
+                        $email_error = "Sorry, Email Already Exists";
+                        $email_status = "";
+                    }
+                }
             }
         }
+        
+        // Password Validations
+        if(empty($password)){
+            $password_error = "Password is Required";
+            $password_status = "";
+        } else if(strlen($password) < 5) {
+            $password_error = "Password is Too Short";
+            $password_status = "";
+        } else if(strlen($password) < 25) {
+            $password_error = "Password is Too Long";
+            $password_status = "";
+        }
+        
+        // Image Validations
+        if(empty($img_name)){
+            $image_error = "Image is required";
+            $photo_status = "";
+        } else if(!in_array($img_extension, $extensions)){
+            $image_error = "Image Extension is Invalid";
+            $photo_status = "";
+        }
+        
     }
 ?>
 
