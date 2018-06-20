@@ -2,7 +2,25 @@
 <?php
     $obj = new base_class;
     if(isset($_POST['login'])){
+        $email = $obj->security($_POST['email']);
+        $password = $obj->security($_POST['password']);
+        $email_status = $password_status = 1;
         
+        // Email Validations
+        if(empty($email)){
+            $email_error = "Email is required";
+            $email_status = "";
+        }
+        
+        // Password Validations
+        if(empty($password)){
+            $password_error = "Password is Required";
+            $password_status = "";
+        } 
+        
+        if(!empty($email_status) && !empty($password_status)) {
+            
+        }
     }
 ?>
 
@@ -12,9 +30,23 @@
         <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
 	    <title>Create A New Account</title>
-    </head>
+	    <?php include 'components/css.php'; ?>
     </head>
     <body>
+        <?php if(isset($_SESSION['security'])): ?>
+            <div class="flash error-flash">
+                <span class="remove">&times;</span>
+                <div class="flash-heading">
+                    <h3><span class="cross">&#x2715;</span>
+                        Error: You Have An Error!
+                    </h3>
+                </div>
+                <div class="flash-body">
+                    <p><?php echo $_SESSION['security']; ?></p>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php unset($_SESSION['security']); ?>
         <div class="signup-container">
             <div class="account-left">
                 <div class="account-text">
