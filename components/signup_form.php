@@ -32,6 +32,22 @@
                 <?php endif; ?>
             </div>
         </div> <!-- close group -->
-        
+        <div class="group">
+            <label for="file" id="file-label">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i> Choose Image
+            </label>
+   			<input type="file" name="img" class="file" id="file">
+            <div class="name-error error">
+                <?php if(isset($image_error)): ?>
+                     <?php echo $image_error; ?>
+                <?php endif; ?>
+            </div>
+        </div> <!-- close group -->
+        <div class="group">
+   			<input type="submit" name="signup" class="btn account-btn" value="Create account">
+   	    </div><!-- close group -->
+   		<div class="group">
+   			<a href="login.php" class="link">Already Have an Account?</a>
+   		</div>
     </form>
 </div> <!-- close form-area -->
