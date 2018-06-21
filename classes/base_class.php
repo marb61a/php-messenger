@@ -19,5 +19,9 @@
         public function security($data){
             return trim(strip_tags($data));
         }
+        
+        public function Create_Session($session_name, $session_value){
+            $_SESSION[$session_name] = $session_value;
+        }
     }
 ?>
