@@ -23,5 +23,10 @@
         public function Create_Session($session_name, $session_value){
             $_SESSION[$session_name] = $session_value;
         }
+        
+        public function Single_Result(){
+            return $this->Query->fetch(PDO::FETCH_OBJ);
+        }
+        
     }
 ?>
