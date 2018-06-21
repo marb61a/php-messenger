@@ -60,6 +60,13 @@
             $photo_status = "";
         }
         
+        if(!empty($name_status) && !empty($email_status) && !empty($password_status) && !empty($photo_status)){
+            move_uploaded_file($img_tmp, "$img_path/$img_name");
+            $status = 0;
+            $clean_status = 0;
+            
+        }        
+        
     }
 ?>
 
