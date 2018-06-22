@@ -16,6 +16,10 @@
       	    return $this->Query->rowCount();
         }
         
+        public function fetch_all() {
+            return $this->Query->fetchAll(PDO::FETCH_OBJ);
+        }
+        
         public function security($data){
             return trim(strip_tags($data));
         }
@@ -26,6 +30,14 @@
         
         public function Single_Result(){
             return $this->Query->fetch(PDO::FETCH_OBJ);
+        }
+        
+        public function time_ago($db_msg_time){
+            date_default_timezone_set("Europe/Dublin");
+            $db_time = strtotime($db_msg_time);
+            
+            $current_time = time();
+            
         }
         
     }

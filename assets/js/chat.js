@@ -22,6 +22,20 @@ $(document).ready(function(){
         }    
     });
     
+    // Check user login time
+    function users_status() {
+    	$.ajax({
+    		type : 'GET',
+    		url  : 'ajax/users_status.php',
+    		dataType : 'JSON',
+    		success : function(feedback) {
+    			if(feedback['status'] == "href"){
+    				window.location = "login.php";
+    			}
+    		}
+    	});
+    }
+    
     // Show messages from the database
     function show_messages(){
         var msg = true;
