@@ -19,7 +19,19 @@
         } 
         
         if(!empty($email_status) && !empty($password_status)) {
-            
+            if($obj->Normal_Query("SELECT * FROM users WHERE email = ?", [$email])){
+                if($obj->Count_Rows() == 0){
+                    $email_error = "Please Enter Correct Email";
+                } else {
+                    $row = $obj->Single_Result();
+                    $mail = $row->email;
+                    $db_password = $row->password;
+                    $user_id = $row->id;
+                    $user_name = $row->name;
+                    $user_image = $row->image;
+                    $clean_status = $row->clean_status;
+                }
+            }
         }
     }
 ?>
