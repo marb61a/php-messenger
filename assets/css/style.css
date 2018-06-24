@@ -307,3 +307,58 @@ body {
     border:2px solid var(--color-white);
 }
 
+.sender-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.left-msg-area {
+    margin-left: 2rem;
+}
+
+.sender-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-silver-4);
+    
+}
+
+.date-time {
+    margin-left: 2rem;
+    color: var(--color-silver-4);
+}
+
+.left-msg {
+    padding: 1rem;
+    width: auto;
+    background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark));
+    color: var(--color-white);
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    margin-top: .3rem;
+    position: relative;
+    font-size: 1.2rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,.3);
+}
+
+.left-files {
+    padding: 1rem;
+    width: auto;
+    background: var(--color-white);
+    margin-top: .3rem;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.left-msg::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -.7rem;
+    width: 0;
+    height: 0;
+    border-top: .7rem solid var(--color-green-light);
+    border-left: .7rem solid transparent;
+}
