@@ -22,6 +22,22 @@ $(document).ready(function(){
         }    
     });
     
+    // Display online users
+    function online_users(){
+        $.ajax({
+            type: 'GET',
+            url  : 'ajax/online_users.php',
+            dataType: 'JSON',
+            success: function(feedback){
+                if(feedback['usera'] == 1){
+                    $('.online_users').html("<span class='show-online'></span> "+"Only You");
+                } else {
+                    $('.online_users').html("<span class='show-online'></span>Online Users "+feedback['users']);
+                }
+            }
+        });
+    }
+    
     // Check user login time
     function users_status() {
     	$.ajax({
