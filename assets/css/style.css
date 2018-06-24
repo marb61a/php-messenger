@@ -362,3 +362,39 @@ body {
     border-top: .7rem solid var(--color-green-light);
     border-left: .7rem solid transparent;
 }
+
+.common-margin {
+    margin-top: 1.5rem;
+}
+
+.right-messages {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-msg-area {
+    max-width: 50%;
+    width: auto;
+}
+
+.right-msg {
+    padding: 1rem;
+    width: auto;
+    background-color: var(--color-silver-3);
+    color: var(--color-white);
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    margin-top: .3rem;
+    color: var(--color-black);
+    font-size: 1.2rem;
+}
+
+.right-files {
+    padding: 1rem;
+    width: auto;
+    background-color: var(--color-white);
+    margin-top: .3rem;
+    font-size: 1.2rem;
+}
+
