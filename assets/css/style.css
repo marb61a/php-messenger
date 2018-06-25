@@ -398,3 +398,57 @@ body {
     font-size: 1.2rem;
 }
 
+.common-images {
+    width: 11rem;
+    height: auto;
+}
+
+.right-time {
+    display: block;
+    text-align: right;
+}
+
+.chat-form {
+    width: 100%;
+    height: 10vh;
+    border-top: 1px solid var(--color-silver-3);
+}
+
+.chat-container {
+    display: flex;
+}
+
+.form-input {
+    width: 50%
+}
+
+.textarea-control {
+    width: 100%;
+    border:0;
+    padding: 1rem 2rem;
+    height: 5rem;
+    resize: none;
+    margin-left: .5rem;
+}
+
+.textarea-control:focus {
+    outline: none;
+}
+
+#upload-label {
+    width: 100%;
+    height: 5rem;
+    line-height: 5.5rem;
+    text-align: center;
+    display: block;
+}
+
+#upload-label:hover {
+    cursor: pointer;
+}
+
+.fa-uploads {
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    color: var(--color-silver-4);
+}
