@@ -37,6 +37,35 @@
 			        } else {
 			            $user_online_status = '<span class="online-icon"></span>';
 			        }
+			        
+			        if($db_user_id == $user_id){
+			            // Right user messages
+			            if($msg_type == 'text'){
+			                echo '<div class="right-messages common-margin">
+			                    <div class="right-msg-area"> 
+			                        <span class="date-time right-time">
+						                <span class="send-msg">&#10004;</span>	'.$msg_time .'
+					                </span> <!-- close date-time -->
+                					<div class="right-msg">
+                						<p>
+                						    '.$message.'
+                						</p>
+					                </div>
+			                    </div>
+			                </div> <!-- close right-messages -->';
+			            } else if($msg_type == "jpg" || $msg_type == "JPG" || $msg_type == "JPEG" || $msg_type == "jpeg"){
+			                echo '<div class="right-messages common-margin">
+			                    <div class="right-msg-area"> 
+			                        <span class="date-time right-time right-message-time">
+                						<span class="send-msg">&#10004;</span>	'.$msg_time .'
+                					</span><!-- close date-time -->
+                					<div class="right-files">
+                						<img src="assets/img/'.$message.'" class="common-images">
+                					</div>
+			                    </div>
+			                </div> <!-- close right-messages -->';
+			            }
+			        }
 			
 		        endforeach;   
 		    }
