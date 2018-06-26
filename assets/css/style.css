@@ -452,3 +452,46 @@ body {
     margin-left: 3rem;
     color: var(--color-silver-4);
 }
+
+::-webkit-input-placeholder {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+
+/* DESIGN CUSTOM SCROLL BAR */
+.messages::-webkit-scrollbar {
+    width: 1rem;
+    background-color: var(--color-silver-3);
+}
+
+.messages::-webkit-scrollbar-thumb{
+    background-color: #888;
+    border-radius: 1rem;
+}
+
+.emoji {
+    height: 5vh;
+    width: 100%;
+}
+
+.emoji-same {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+}
+
+.emoji-same:hover {
+    cursor: pointer;
+}
+
+.form-section {
+    padding: 3rem;
+}
+
+.form-grid {
+    width: 35%;
+}
+
