@@ -22,6 +22,36 @@ $(document).ready(function(){
         }    
     });
     
+    // Upload images and files
+    $("#upload-files").change(function(){
+        var file_name = $("#upload-files").val();
+        
+        if(file_name.length != ""){
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/send_files.php',
+                data: new FormData($(".chat-form")[0]),
+                contentType: false,
+                processData: false,
+                success: function(feedback){
+                    if(feedback == "error"){
+                        $(".files-error").addClass("show-file-error");
+                        $(".files-error").html("<span class='files-cross-icon'>&#x2715;</span>"+ "Please choose valid image/file");
+                        
+                        setTimeout(function(){
+                            $(".files-error").removeClass("show-file-error");
+                        }, 5000);
+                    } else if (feedback == "success"){
+                        show_messages();
+                        $(".messages").animate({
+                            scrollTop: $(".messages")[0].scrollHeight
+                        }, 2000);
+                    }
+                }
+            });
+        }
+    });
+    
     $(".clean").click(function(){
         var clean = 1;
         
