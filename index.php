@@ -24,6 +24,25 @@
         <?php endif ?>
 	    <?php unset($_SESSION['loader']); ?>
 	    
+	    <!-- Flash Message for updating password -->
+	    <?php if(isset($_SESSION['password_updated'])):?>
+	        <div class="flash success-flash">
+	            <span class="remove">&times;</span>
+	            <div class="flash-heading">
+	                <h3>
+	                    <span class="checked">&#10004;</span>
+	                    Success!! You have updated successfully
+	                </h3>
+	            </div>
+	            <div class="flash-body">
+	                <p>
+	                    <?php echo $_SESSION['password_updated']; ?>
+	                </p>
+	            </div>
+	        </div>
+	    <?php endif ?>
+	    <?php unset($_SESSION['password_updated']); ?>
+	    
 	    <!-- Flash Message for updating name -->
 	    <?php if(isset($_SESSION['name_updated'])):?>
 	        <div class="flash success-flash">
