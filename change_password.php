@@ -26,8 +26,29 @@
         if(empty($retype_password)){
             $retype_password_error = "Retype password is required";
 		    $retype_status = "";
+        } else if($new_password != $retype_password){
+            $retype_password_error = "Password is not confirmed";
+		    $retype_status = "";
         }
         
+        if(!empty($current_status) && !empty($new_status) && !empty($retype_status)){
+            $user_id = $_SESSION['user_id'];
+            
+            if($obj->Normal_Query("SELECT password FROM users WHERE id = ?", [$user_id])){
+                $row = $obj->Single_Result();
+                $db_password = $row->password;
+                
+                if(password_verify($current_password, $db_password)){
+                    if($obj->Normal_Query("UPDATE users SET password = ? WHERE id = ?", [password_hash($new_password,PASSWORD_DEFAULT), $user_id])){
+                        $obj->Create_Session("Password Updated", "Your password is successfully updated");
+                        header("location:index.php");
+                    }
+                } else {
+                    $current_password_error = "Please enter the correct password";
+                }
+            }
+        }
+         
     }
 ?>
 
