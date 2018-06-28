@@ -95,5 +95,6 @@
         </div> <!-- close signup-container -->
         
         <?php include 'components/js.php'; ?>
+        <script type="text/javascript" src="assets/js/file_labeler.js"></script>
     </body>
 </html>
