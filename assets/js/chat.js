@@ -52,6 +52,26 @@ $(document).ready(function(){
         }
     });
     
+    // Send Emoji
+    $(".emoji-same").click(function() {
+        var emoji = $(this).attr("src");
+        
+        $.ajax({
+            type: 'POST',
+            url: 'ajax/send_emoji.php',
+		    data: {'send_emoji':emoji},
+		    dataType: 'JSON',
+		    success: function(feedback){
+		        if(feedback.status == "success"){
+		            show_messages();
+		            $(".messages").animate({
+		                scrollTop: $(".messages")[0].scrollHeight
+		            }, 2000);
+		        }
+		    }
+        });
+    });
+    
     $(".clean").click(function(){
         var clean = 1;
         
