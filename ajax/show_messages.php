@@ -18,7 +18,7 @@
 		    if($obj->Count_Rows() == 0){
 		        echo "<p class='clean_message'>
 		            Start a conversation with your friends
-		        </p>"
+		        </p>";
 		    } else {
 		        $messages_row = $obj->fetch_all();
 		        
@@ -64,6 +64,43 @@
                 					</div>
 			                    </div>
 			                </div> <!-- close right-messages -->';
+			            } else if($msg_type == "PNG" || $msg_type == "png"){
+			            	echo '<div class="right-messages common-margin">
+			            		<div class="right-msg-area"> 
+			            			<span class="date-time right-time right-message-time">
+										<span class="send-msg">&#10004;</span>	'.$msg_time .'
+									</span><!-- close date-time -->
+									<div class="right-files">
+										<img src="assets/img/'.$message.'" class="common-images">
+									</div>
+			            		</div><!-- close right-msg-area -->
+			            	</div> <!-- close right-messages -->';	
+			            } else if($msg_type == "zip" || $msg_type == "ZIP"){
+			            	echo '<div class="right-messages common-margin">
+			            		<div class="right-msg-area"> 
+			            			<span class="date-time right-time right-message-time">
+										<span class="send-msg">&#10004;</span>	'.$msg_time .'
+									</span><!-- close date-time -->
+									<div class="right-files">
+										<a href="assets/img/'.$message.'" class="all-files">
+											<i class="fas fa-arrow-circle-down files-common"></i>'.$message.'
+										</a>
+									</div>
+			            		</div><!-- close right-msg-area -->
+			            	</div> <!-- close right-messages -->';
+			            } else if($msg_type == "PDF" || $msg_type == "pdf"){
+			            	echo '<div class="right-messages common-margin">
+			            		<div class="right-msg-area"> 
+			            			<span class="date-time right-time right-message-time">
+										<span class="send-msg">&#10004;</span>	'.$msg_time .'
+									</span><!-- close date-time -->
+									<div class="right-files">
+										<a href="assets/img/'.$message.'" class="all-files" target="_blank">
+											<i class="far fa-file-pdf files-common pdf"></i>'.$message.'
+										</a>
+									</div>
+			            		</div><!-- close right-msg-area -->
+			            	</div> <!-- close right-messages -->';
 			            }
 			        }
 			
