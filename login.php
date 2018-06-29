@@ -49,7 +49,7 @@
                                         $activity_row = $obj->Single_Result();
                                         
                                         if($activity_row == 0){
-                                             $obj->Normal_Query("INSERT INTO users_activities (user_id, login_time) VALUES (?,?)", [$user_id, $login_time]);
+                                            $obj->Normal_Query("INSERT INTO users_activities (user_id, login_time) VALUES (?,?)", [$user_id, $login_time]);
                                             $obj->Create_Session("user_name", $user_name);
                                             $obj->Create_Session("user_id", $user_id);
                                             $obj->Create_Session("user_image", $user_image);
