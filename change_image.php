@@ -6,6 +6,8 @@
     if(isset($_POST['change_img'])){
         $img_name = $_FILES['change_img']['name'];
         $tmp_name = $_FILES['change_img']['tmp_name'];
+        $img_path  = "assets/img/";
+        
     }
 ?>
 
