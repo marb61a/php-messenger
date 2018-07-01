@@ -6,7 +6,25 @@
     if(isset($_POST['change_img'])){
         $img_name = $_FILES['change_img']['name'];
         $tmp_name = $_FILES['change_img']['tmp_name'];
-        $img_path  = "assets/img/";
+        $img_path = "assets/img/";
+        $extensions = ['jpg', 'jpeg', 'png'];
+        $img_ext = explode(".", $img_name);
+        $img_extension = end($img_ext);
+        
+        if(empty($img_name)){
+            $img_error = "Please choose the image";
+        } else if(!in_array($img_extension, $extensions)){
+            $img_error = "Please choose the valid extension";
+        } else {
+            $user_id = $_SESSION['user_id'];
+   	        move_uploaded_file($img_tmp , "$img_path/$img_name");
+   	        
+   	        if($obj->Normal_Query("UPDATE users SET image = ? WHERE id = ?", [$img_name, $user_id])){
+   	            $obj->Create_Session("update_image", "Your photo is successfully updated");
+   		        $obj->Create_Session("user_image", $img_name);
+   	        	header("location:index.php");
+   	        }
+        }
         
     }
 ?>

@@ -101,6 +101,17 @@
 									</div>
 			            		</div><!-- close right-msg-area -->
 			            	</div> <!-- close right-messages -->';
+			            } else if($msg_type == "emoji"){
+			            	echo '<div class="right-messages common-margin">
+								<div class="right-msg-area">
+									<span class="date-time right-time right-message-time">
+										<span class="send-msg">&#10004;</span>	'.$msg_time .'
+									</span><!-- close date-time -->
+									<div class="right-files">
+										<img src="'.$message.'" class="animated-emoji">
+									</div>
+								</div><!-- close right-msg-area -->
+							</div><!-- close right-messages -->';
 			            }
 			        }
 			
