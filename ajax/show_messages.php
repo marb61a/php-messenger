@@ -112,6 +112,55 @@
 									</div>
 								</div><!-- close right-msg-area -->
 							</div><!-- close right-messages -->';
+			            } else if($msg_type == "docx"){
+			            	echo '<div class="right-messages common-margin">
+								<div class="right-msg-area">
+									<span class="date-time right-time right-message-time">
+										<span class="send-msg">&#10004;</span>	'.$msg_time .'
+									</span><!-- close date-time -->
+									<div class="right-files">
+										<a href="assets/img/'.$message.'" class="all-files">
+											<i class="far fa-file-word files-common word"></i>'.$message.'
+										</a>
+									</div>
+								</div><!-- close right-msg-area -->
+							</div><!-- close right-messages -->';
+			            } else if($msg_type == "xlsx") {
+			            	echo '<div class="right-messages common-margin">
+								<div class="right-msg-area">
+									<span class="date-time right-time right-message-time">
+										<span class="send-msg">&#10004;</span>	'.$msg_time .'
+									</span><!-- close date-time -->
+									<div class="right-files">
+										<a href="assets/img/'.$message.'" class="all-files">
+											<i class="far fa-file-excel files-common word"></i>'.$message.'
+										</a>
+									</div>
+								</div><!-- close right-msg-area -->
+							</div><!-- close right-messages -->';
+			            }
+			        } else {
+			        	// Left User Messages
+			        	if($msg_type == 'text'){
+			                echo '<div class="left-message common-margin">
+								<div class="sender-img-block">
+									<img src="assets/img/'.$user_image.'" class="sender-img">
+									'.$user_online_status.'
+								</div><!-- close sender-img-block -->
+								<div class="left-msg-area">
+									<div class="user-name-date">
+										<span class="sender-name">
+											'.$full_name.'
+										</span><!-- close sender-name -->
+										<span class="date-time">
+											'.$msg_time .'
+										</span><!-- close date-time -->
+									</div><!-- close user-name-date -->
+									<div class="left-msg">
+										<p>'.$message.'</p>
+									</div><!-- close left-msg -->
+								</div><!-- close left-msg-area -->
+							</div><!-- close left-message -->';
 			            }
 			        }
 			
