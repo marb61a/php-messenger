@@ -55,15 +55,46 @@
                                             $obj->Create_Session("user_image", $user_image);
                                             $obj->Create_Session("loader","1");
                                             header("location:index.php");
-                                        } else {
                                             
+                                        } else {
+                                            $obj->Normal_Query("UPDATE users_activities SET login_time = ? WHERE user_id = ?", [$login_time, $user_id]);
+                                            $obj->Create_Session("user_name", $user_name);
+                                            $obj->Create_Session("user_id", $user_id);
+                                            $obj->Create_Session("user_image", $user_image);
+                                            $obj->Create_Session("loader","1");
+                                            header("location:index.php");
                                         }
                                     }
                                 }
                             }
-                        }
+                        } else {
+                            $login_time = time();
+                            
+                            if($obj->Normal_Query("SELECT * FROM users_activities WHERE user_id = ?", [$user_id])){
+                                $activity_row = $obj->Single_Result();
+                                
+                                if($activity_row == 0){
+                                    $obj->Normal_Query("INSERT INTO users_activities (user_id, login_time) VALUES (?,?)", [$user_id, $login_time]);
+                                    $obj->Create_Session("user_name", $user_name);
+                                    $obj->Create_Session("user_id", $user_id);
+                                    $obj->Create_Session("user_image", $user_image);
+                                    $obj->Create_Session("loader","1");
+                                    header("location:index.php");
+                                    
+                                } else {
+                                    $obj->Normal_Query("UPDATE users_activities SET login_time = ? WHERE user_id = ?", [$login_time, $user_id]);
+                                    $obj->Create_Session("user_name", $user_name);
+                                    $obj->Create_Session("user_id", $user_id);
+                                    $obj->Create_Session("user_image", $user_image);
+                                    $obj->Create_Session("loader","1");
+                                    header("location:index.php");
+                                }
+                            }
+                        } 
+                    } else {
+                        $password_error = "Please enter correct password";
                     }
-                }
+                } 
             }
         }
     }
