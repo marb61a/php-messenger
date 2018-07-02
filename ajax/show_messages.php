@@ -161,6 +161,46 @@
 									</div><!-- close left-msg -->
 								</div><!-- close left-msg-area -->
 							</div><!-- close left-message -->';
+			            } else if($msg_type == "jpg" || $msg_type == "JPG" || $msg_type == "JPEG" || $msg_type == "jpeg"){
+			            	echo '<div class="left-message common-margin">
+								<div class="sender-img-block">
+									<img src="assets/img/'.$user_image.'" class="sender-img">
+									'.$user_online_status.'
+								</div><!-- close sender-img-block -->
+								<div class="left-msg-area">
+									<div class="user-name-date">
+										<span class="sender-name">
+											'.$full_name.'
+										</span><!-- close sender-name -->
+										<span class="date-time">
+											'.$msg_time .'
+										</span><!-- close date-time -->
+									</div><!-- close user-name-date -->
+									<div class="left-files">
+                    					<img src="assets/img/'.$message.'" class="common-images">
+									</div><!-- close left-msg -->
+								</div><!-- close left-msg-area -->
+							</div><!-- close left-message -->';
+			            } else if($msg_type == "PNG" || $msg_type == "png"){
+			            	echo '<div class="left-message common-margin">
+								<div class="sender-img-block">
+									<img src="assets/img/'.$user_image.'" class="sender-img">
+									'.$user_online_status.'
+								</div><!-- close sender-img-block -->
+								<div class="left-msg-area">
+									<div class="user-name-date">
+										<span class="sender-name">
+											'.$full_name.'
+										</span><!-- close sender-name -->
+										<span class="date-time">
+											'.$msg_time .'
+										</span><!-- close date-time -->
+									</div><!-- close user-name-date -->
+									<div class="left-files">
+				                    	<img src="assets/img/'.$message.'" class="common-images">
+									</div><!-- close left-msg -->
+								</div><!-- close left-msg-area -->
+							</div><!-- close left-message -->';
 			            }
 			        }
 			
