@@ -201,7 +201,51 @@
 									</div><!-- close left-msg -->
 								</div><!-- close left-msg-area -->
 							</div><!-- close left-message -->';
-			            }
+			            } else if($msg_type == "zip" || $msg_type == "ZIP") {
+							echo '<div class="left-message common-margin">
+								<div class="sender-img-block">
+									<img src="assets/img/'.$user_image.'" class="sender-img">
+									'.$user_online_status.'
+								</div><!-- close sender-img-block -->
+								<div class="left-msg-area">
+									<div class="user-name-date">
+										<span class="sender-name">
+											'.$full_name.'
+										</span><!-- close sender-name -->
+										<span class="date-time">
+											'.$msg_time .'
+										</span><!-- close date-time -->
+									</div><!-- close user-name-date -->
+									<div class="left-files">
+					                     <a href="assets/img/'.$message.'" class="all-files">
+					                    	<i class="fas fa-arrow-circle-down files-common"></i>'.$message.'
+					                    </a>
+									</div><!-- close left-msg -->
+								</div><!-- close left-msg-area -->
+							</div><!-- close left-message -->';
+						} else if($msg_type == "PDF" || $msg_type == "pdf") {
+							echo '<div class="left-message common-margin">
+								<div class="sender-img-block">
+									<img src="assets/img/'.$user_image.'" class="sender-img">
+									'.$user_online_status.'
+								</div><!-- close sender-img-block -->
+								<div class="left-msg-area">
+									<div class="user-name-date">
+										<span class="sender-name">
+											'.$full_name.'
+										</span><!-- close sender-name -->
+										<span class="date-time">
+											'.$msg_time .'
+										</span><!-- close date-time -->
+									</div><!-- close user-name-date -->
+									<div class="left-files">
+                    					<a href="assets/img/'.$message.'" class="all-files" target="_blank">
+                    						<i class="far fa-file-pdf pdf files-common"></i>'.$message.'
+                    					</a>
+									</div><!-- close left-msg -->
+								</div><!-- close left-msg-area -->
+							</div><!-- close left-message -->';
+						}
 			        }
 			
 		        endforeach;   
