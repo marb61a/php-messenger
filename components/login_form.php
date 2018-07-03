@@ -21,7 +21,7 @@
             </div>
         </div> <!-- close group -->
         <div class="group">
-            <input type="password" name="password" class="control" placeholder="Create Password..." 
+            <input type="password" name="password" class="control" placeholder="Enter Password..." 
                 value="<?php if(isset($password)): echo $password; endif;?>">
            <div class="name-error error">
                 <?php if(isset($password_error)): ?>
