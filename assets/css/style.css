@@ -775,3 +775,71 @@ body {
 
 
 /* MEDIA QUERIES */
+@media (max-width: 765px) {
+    .account-left {
+        display: none;
+    }
+    .account-right {
+        width: 100%;
+    }
+
+    .chat-container {
+        flex-wrap: wrap;
+    }
+
+    .bars {
+        display: block;
+    }
+
+    #sidebar {
+        width: 100%;
+        display: none;
+    }
+
+    #right-area {
+        width: 100%;
+    }
+
+    #sidebar::before {
+        width: 30%;
+    }
+
+    .left-message {
+        max-width: 100%;
+        width: auto;
+    }
+
+    .right-msg-area {
+        max-width: 90%;
+        width: auto;
+    }
+
+    .messages {
+        height: 70vh;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: .9rem;
+        font-family: sans-serif;
+        color: var(--color-black);
+    }
+
+    .loader-area {
+        width: 100%;
+        left: 0;
+        height: 70vh;
+    }
+
+    .form-grid {
+        width: 100%;
+    }
+
+    .flash {
+        width:80%;
+        left: 10%;
+    }
+
+    .files-error {
+        bottom: 20vh;
+    }
+}
