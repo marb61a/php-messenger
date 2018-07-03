@@ -58,9 +58,27 @@
 	                    <?php echo $_SESSION['name_updated']; ?>
 	                </p>
 	            </div>
-	        </div>
+	        </div> <!-- close flash-->
 	    <?php endif ?>
 	    <?php unset($_SESSION['name_updated']); ?>
+	    
+	     <!-- Flash Message for image update/change -->
+	     <?php if(isset($_SESSION['update_image'])):?>
+	     	<div class="flash success-flash">
+	     		 <div class="flash-heading">
+	                <h3>
+	                    <span class="checked">&#10004;</span>
+	                    Success!! You have updated successfully
+	                </h3>
+	            </div>
+	            <div class="flash-body">
+	                <p>
+	                    <?php echo $_SESSION['update_image']; ?>
+	                </p>
+	            </div>
+	     	</div> <!-- close flash-->
+	     <?php endif ?>
+	     <?php unset($_SESSION['name_updated']); ?>
         
         <?php include 'components/nav.php'; ?>
             <div class="chat-container">

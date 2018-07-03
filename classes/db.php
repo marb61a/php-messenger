@@ -1,17 +1,15 @@
 <?php
-    
-//     $servername = getenv('IP');
+    $servername = getenv('IP');
+    $username = getenv('C9_USER');
+    $password = "";
+    $database = "c9";
     
     class db {
-        private $database = "c9";
-        private $password = "";
-        private $username = 'C9_USER';
-        private $dbport = 3306;
-        protected $con;
+    protected $con;    
         
         public function __construct() {
             try {
-                $this->con = new PDO($this->database, $this->dbport, $this->username, $this->password);
+                $this->con = new PDO($this->servername, $this->database, $this->username, $this->password);
             } catch(Exception $e){
 			    echo "DataBase Connection Problem: ". $e->getMessage();
 		    }
